@@ -1,5 +1,6 @@
 package com.irin.example.restaurant.service;
 
+import com.irin.example.restaurant.model.Food;
 import com.irin.example.restaurant.model.Promotion;
 import com.irin.example.restaurant.repository.PromotionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,9 @@ public class PromotionService {
         ArrayList<Promotion> promotions = new ArrayList<>();
         promotionRepository.findAll().forEach(promotions::add);
         return promotions;
+    }
+    public Promotion findById(int promotionId){
+        return promotionRepository.findById(promotionId).get();
     }
     public Promotion addPromotion(Promotion promotion){
         return promotionRepository.save(promotion);

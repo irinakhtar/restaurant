@@ -18,7 +18,14 @@ public class FoodService {
         foodRepository.findAll().forEach(foods::add);
         return foods;
     }
+    public Food findById(int foodId){
+        return foodRepository.findById(foodId).get();
+    }
     public Food addFood(Food food){
         return foodRepository.save(food);
     }
+    public Food update(Food food){
+        return foodRepository.save(food);
+    }
+
 }
